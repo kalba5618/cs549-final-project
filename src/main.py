@@ -3,9 +3,13 @@ from models import get_models
 from evaluation import evaluate_model
 from sklearn.model_selection import GridSearchCV
 import pandas as pd
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_PATH = PROJECT_ROOT / "data" / "diabetic_data.csv"
 
 # Load data
-X_train, X_test, y_train, y_test = load_and_preprocess("../data/diabetic_data.csv")
+X_train, X_test, y_train, y_test = load_and_preprocess(DATA_PATH)
 
 models = get_models()
 results = []
