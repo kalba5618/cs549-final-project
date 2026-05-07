@@ -58,39 +58,3 @@ df_results = pd.DataFrame(results)
 print(df_results)
 
 df_results.to_csv("results.csv", index=False)
-
-# Create folder for visualizations
-FIGURES_DIR.mkdir(exist_ok=True)
-
-# Save confusion matrix for each model
-for name, model in trained_models.items():
-    ConfusionMatrixDisplay.from_estimator(model, X_test, y_test)
-    plt.title(f"{name} Confusion Matrix")
-    plt.tight_layout()
-    plt.savefig(FIGURES_DIR / f"{name.lower().replace(' ', '_')}_confusion_matrix.png")
-    plt.close()
-
-# Save ROC curve comparison
-plt.figure()
-
-for name, model in trained_models.items():
-    if hasattr(model, "predict_proba") or hasattr(model, "decision_function"):
-        RocCurveDisplay.from_estimator(model, X_test, y_test, name=name)
-
-plt.title("ROC Curve Comparison")
-plt.tight_layout()
-plt.savefig(FIGURES_DIR / "roc_curve_comparison.png")
-plt.close()
-
-# Save bar chart comparing model metrics
-metric_cols = ["accuracy", "precision", "recall", "f1"]
-df_plot = df_results.set_index("Model")[metric_cols]
-
-df_plot.plot(kind="bar", figsize=(10, 6))
-plt.title("Model Performance Comparison")
-plt.ylabel("Score")
-plt.ylim(0, 1)
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.savefig(FIGURES_DIR / "model_performance_comparison.png")
-plt.close()
