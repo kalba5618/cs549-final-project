@@ -27,7 +27,7 @@ for name, model in models.items():
             "max_depth": [7],
             "min_samples_split": [10],
             "min_samples_leaf": [50],
-            "class_weight": [None, "balanced"]
+            "class_weight": ["balanced"]
         }
         model = GridSearchCV(
             model, 
