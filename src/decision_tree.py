@@ -1,3 +1,5 @@
+#For Testing Purposes
+
 from preprocessing import load_and_preprocess
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
@@ -19,9 +21,9 @@ baseline_metrics = evaluate_model(baseline, X_train, X_test, y_train, y_test)
 # parameters to test 
 params = {
     "criterion": ["gini", "entropy"],
-    "max_depth": [3, 5, 7],
-    "min_samples_split": [10,20],
-    "min_samples_leaf": [5,10],
+    "max_depth": [3,5,7,10],
+    "min_samples_split": [10,20,50],
+    "min_samples_leaf": [5,10,15],
     "class_weight": [None, "balanced"]
 }
 
@@ -35,7 +37,7 @@ grid = GridSearchCV(
 
 tuned_metrics = evaluate_model(grid, X_train, X_test, y_train, y_test)
 
-#compare baseline vs tuned trees
+#compare default vs tuned trees
 print("Baseline Decision Tree:")
 print(baseline_metrics)
 
@@ -46,6 +48,10 @@ print("\nBest parameters:")
 print(grid.best_params_)
 
 best_tree = grid.best_estimator_
+
+#
+# visualizations for best_tree
+#
 
 plt.figure(figsize=(24, 12))
 plot_tree(
