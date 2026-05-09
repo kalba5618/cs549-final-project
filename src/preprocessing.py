@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
-def load_and_preprocess(path):
+def load_and_preprocess(path, return_feature_names=False):
     df = pd.read_csv(path)
 
     # Replace '?' with NaN
@@ -26,10 +26,16 @@ def load_and_preprocess(path):
 
     # One-hot encoding
     X = pd.get_dummies(X, drop_first=True)
+    
+    #return feature names for dt visualization
+    feature_names = X.columns
 
     # Feature scaling
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
+    
     # Train/test split
+    if return_feature_names:
+        return train_test_split(X_scaled, y, test_size=0.2, random_state=42), feature_names
     return train_test_split(X_scaled, y, test_size=0.2, random_state=42)

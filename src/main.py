@@ -5,7 +5,7 @@ from sklearn.model_selection import GridSearchCV
 import pandas as pd
 
 # Load data
-X_train, X_test, y_train, y_test = load_and_preprocess("../data/diabetic_data.csv")
+X_train, X_test, y_train, y_test = load_and_preprocess("data/diabetic_data.csv")
 
 models = get_models()
 results = []
