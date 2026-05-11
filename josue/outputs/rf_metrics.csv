@@ -1,0 +1,2 @@
+Model,accuracy,precision,recall,f1,roc_auc,train_time_s,pred_time_s,tuning_time_s,best_params
+Random Forest,0.684383483354765,0.13624856156501727,0.4709626093874304,0.21135308818279186,0.6351509484255722,1.0756,0.0431,85.79,"{'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': 'balanced'}"

@@ -1,0 +1,11 @@
+params,mean_test_score,std_test_score,mean_train_score,rank_test_score
+"{'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': 'balanced'}",0.21667740760938708,0.007805324587612175,0.2988579652417941,1
+"{'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': 20, 'class_weight': 'balanced'}",0.14362059655136722,0.010172966514307484,0.737396255183915,2
+"{'n_estimators': 500, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'log2', 'max_depth': 20, 'class_weight': 'balanced'}",0.13108587133376287,0.016780571690434298,0.739044310257607,3
+"{'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': 20, 'class_weight': 'balanced'}",0.0918356976379586,0.014656926140573278,0.8218777379675437,4
+"{'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': 20, 'class_weight': 'balanced'}",0.09133968760208425,0.012654819972218729,0.8355971129295447,5
+"{'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': 30, 'class_weight': 'balanced'}",0.008926629664218125,0.0066015674142126226,0.9793649868049557,6
+"{'n_estimators': 200, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': None, 'class_weight': 'balanced'}",0.00590629980346839,0.0030430916225572062,0.9923387411576303,7
+"{'n_estimators': 200, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': 'balanced'}",0.005901277199548869,0.0032842125001324566,0.9941788745127115,8
+"{'n_estimators': 300, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': None, 'class_weight': 'balanced'}",0.004335770329065578,0.0028894949796602187,0.9941513905471895,9
+"{'n_estimators': 300, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': None, 'class_weight': 'balanced'}",0.0,0.0,0.999801155775106,10
