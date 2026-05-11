@@ -28,30 +28,14 @@ for name, model in models.items():
     print(f"Running {name}...")
 
     # Hyperparameter tuning
-    if name == "Random Forest": # random forest tuning
+    if name == "Random Forest":
         param_grid = {
             "n_estimators": [50],
             "max_depth": [10]
         }
         model = GridSearchCV(model, param_grid, cv=cv, scoring="f1", n_jobs=-1)
-    
-    if name == "Decision Tree": # decision tree tuning
-        param_grid = {
-            "criterion": ["entropy"],
-            "max_depth": [7],
-            "min_samples_split": [10],
-            "min_samples_leaf": [50],
-            "class_weight": ["balanced"]
-        }
-        model = GridSearchCV(
-            model, 
-            param_grid,
-            cv=3,
-            scoring="f1",
-            n_jobs=-1
-        )
 
-    if name == "Gradient Boosting": # gradient boosting tuning
+    if name == "Gradient Boosting":
         param_grid = {
             "learning_rate": [0.05, 0.1],
             "max_leaf_nodes": [15, 31],
